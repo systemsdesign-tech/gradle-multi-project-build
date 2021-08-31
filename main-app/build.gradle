@@ -1,0 +1,22 @@
+plugins {
+  // Apply the java plugin to add support for Java
+  id 'java'
+  // Apply the application plugin to enable the 'run' target
+  id 'application'
+}
+
+dependencies {
+  //include the :custom-lib project as a dependency
+  implementation project(':custom-lib')
+
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+  useJUnitPlatform()
+}
+
+application {
+  mainClass = 'com.example.main_app.Main'
+}
